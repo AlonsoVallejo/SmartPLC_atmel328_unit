@@ -58,16 +58,8 @@ Responses to ESP32:
 ### 5. Main Application (main.cpp)
 Non-blocking architecture with timing-based updates:
 - 50ms input update cycle (20 Hz)
-- 500ms heartbeat status broadcast
 - Serial communication processed continuously
 - Empty application logic section for user code
-
-## Design Principles
-✓ Non-blocking (no delays in main loop)
-✓ Modular (independent components)
-✓ No RTOS required
-✓ Memory efficient for Arduino Nano
-✓ Extensible (easy to add new features)
 
 ## Build & Deploy
 - PlatformIO configured for Arduino Nano 328p
