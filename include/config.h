@@ -36,8 +36,14 @@ static const uint8_t OUTPUT_PINS[NUM_OUTPUTS] = {
 // ============================================================================
 // SERIAL COMMUNICATION SETTINGS
 // ============================================================================
-#define SERIAL_BAUD  9600
-#define SERIAL_TIMEOUT_MS 100
+// Hardware Serial (USB for debugging/programming)
+#define DEBUG_SERIAL_BAUD 115200
+
+// SoftwareSerial (ESP32 PLC link)
+// Uses pins A1 (RX from ESP32) and A2 (TX to ESP32)
+#define PLC_SERIAL_RX_PIN A1  // Pin 15 - receive from ESP32 TX
+#define PLC_SERIAL_TX_PIN A2  // Pin 16 - transmit to ESP32 RX
+#define PLC_SERIAL_BAUD 9600  // Match ESP32 Serial2 configuration
 
 // ============================================================================
 // INPUT DEBOUNCE SETTINGS
@@ -48,6 +54,5 @@ static const uint8_t OUTPUT_PINS[NUM_OUTPUTS] = {
 // TIMING SETTINGS
 // ============================================================================
 #define MAIN_LOOP_RATE_MS 50  // Main loop cycle time (20 Hz)
-#define HEARTBEAT_RATE_MS 500 // Heartbeat/status update interval
 
 #endif
